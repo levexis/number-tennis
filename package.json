@@ -1,0 +1,33 @@
+{
+  "name": "numbertennis",
+  "description": "Number Tennis",
+  "version": "0.0.1",
+  "private": true,
+  "contributors": [
+    "Thomas Cook thomasamcook@outlook.com",
+    "Paul Cook paulmcook@outlook.com"
+  ],
+  "engines": {
+    "node": "0.10.0"
+  },
+  "scripts": {
+    "start": "app.js",
+    "test": ""
+   },
+  "dependencies": {
+    "express": "latest",
+    "express-params": "latest"
+  },
+  "devDependencies": {
+    "supertest": "latest",
+    "chai": "latest",
+    "mocha": "latest",
+    "nodemon": "latest",
+    "phantomjs": "latest",
+    "sinon": "latest",
+    "selenium-webdriver": "latest",
+    "istanbul": "latest",
+    "karma": "latest",
+    "chai-webdriver": "latest"
+   }
+}
