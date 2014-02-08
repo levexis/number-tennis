@@ -16,18 +16,14 @@
    },
   "dependencies": {
     "express": "latest",
-    "express-params": "latest"
+    "express-params": "latest",
+    "express-minify": "latest",    
   },
   "devDependencies": {
     "supertest": "latest",
     "chai": "latest",
     "mocha": "latest",
     "nodemon": "latest",
-    "phantomjs": "latest",
-    "sinon": "latest",
-    "selenium-webdriver": "latest",
-    "istanbul": "latest",
-    "karma": "latest",
-    "chai-webdriver": "latest"
+    "istanbul": "latest"
    }
 }

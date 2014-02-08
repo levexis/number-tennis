@@ -1,6 +1,6 @@
 var express = require('express'),
-    app = express(),
-    minify = require('express-minify');
+    app = express();
+//    minify = require('express-minify');
 
 var SERVER= { PORT: 80,
 			  maxAge: 60};
@@ -9,6 +9,7 @@ var SERVER= { PORT: 80,
  * Middleware
  */
 app.use(express.static(__dirname + '/public', { maxAge: SERVER.maxAge })); // allow static content to be cached for a minute
+/* lots of pi complaining
 app.use(minify(
 {
 	js_match: /javascript/,
@@ -22,14 +23,15 @@ app.use(minify(
 	whitelist: null
 }));
 app.use(express.compress());
-app.use(express.cookieParser());
-app.use(express.bodyParser());
+*/
+//app.use(express.cookieParser());
+//app.use(express.bodyParser());
 
 // this creates an issue as we have loads of sessions! Should only set that long age if they actually login
-app.use(express.session);
-app.use(flash());
+//app.use(express.session);
+//app.use(flash());
 
 // dispatch to route
 app.use(app.router);
 
-module.exports ( app.listen( SERVER.PORT ) );
+module.exports = app.listen( SERVER.PORT );
