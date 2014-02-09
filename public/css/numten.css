@@ -1,0 +1,265 @@
+/**
+* Fonts
+*/
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('font/opensans-regular.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+
+@font-face {
+	font-family: 'Din Condensed';
+	src: url('font/din-condensed.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+
+h1,h2,h3,h4,h5,
+[type="submit"],
+button {
+	font-family:'Din Condensed',arial;
+	text-transform:uppercase;
+}
+ 
+
+/**
+* Main
+*/
+
+body {
+	background:#E3E7EC;
+	margin:50px;
+}
+article, aside, figure, footer, header, hgroup, menu, nav, section { 
+    display:block;
+}
+
+#canvas {
+	background:#E3E7EC;
+	color:#2E3A47;
+	font-family:'Open Sans', sans-serif;
+	position:relative;
+}
+select {
+	width:98%;
+
+}
+.webkit select {
+	-webkit-appearance: none;
+	-webkit-padding-end: 20px;
+	-webkit-padding-start: 5px;
+	-webkit-user-select: none;
+	border: none;
+	border-radius: 0;
+	font-size: inherit;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+form fieldset {
+	position:relative;
+	margin:0 0 5px 0;
+}
+
+[type="submit"],
+button,
+.button {
+	border:none;
+	color:#fff;
+	text-align:center;
+	font-weight:bold;
+	padding:8px;
+}
+
+#instructions { visibility: hidden }
+    
+#options { visibility: hidden }
+
+#target {
+    text-decoration: underline;    
+}
+
+
+#answers {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: table;
+}
+.answer {
+    float: left;
+	text-align:center;
+	color:#fff;
+	padding: 10px;
+	margin: 20px;	
+  	border: 10px solid #fff;
+	width:100px;
+	line-height:100px;
+	font-size:4em;
+	background:#7E8994;
+}
+
+.score {
+	margin: 20px;
+	width: 80%;
+	text-align:center;
+	color:#FFF;
+	background:#7E8994;
+	font-size:2em;    
+}
+.answer:hover {
+	background: black;    
+}
+
+.ball {
+    border-radius: 100%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+	text-transform:uppercase;
+}
+
+.serve {
+    width: 100%;
+    margin: 0px auto;
+    float: center ;
+	text-align:center;
+	line-height:150px;
+    width: 150px;
+    height: 150px;
+    background: orange;
+    border: 3px solid green;
+	font-size:3em;
+	color: #FFF;
+}
+
+.serve:hover {
+	background: green;    
+}
+
+[type="submit"],
+.button {
+	font-size:1.2em;
+	background:#8FB73D;
+	border-bottom:3px solid #6E9226;
+}
+
+.disabled {
+	background-color:#7E8994 !important;
+	border-bottom:3px solid #414D59 !important;
+}
+.deleteBut{
+	font-size:1.2em;
+	background:#BA432D;
+	border-bottom:3px solid #A53724;
+	width:100%;
+}
+
+.exclaimer {
+	color:#666;
+	text-align:center;
+	font-size:0.8em;
+	margin:20px 0 20px 0;
+}
+/**
+* Clearfix
+*/
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix {
+    display: block;
+}
+
+/**
+* Splash
+*/
+
+.splash {
+	background:#82B000 url('../splash.png') center center no-repeat;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:10000;
+	height:100%;
+}
+
+.splash .splash-loader {
+	width:16px;
+	height:16px;
+	position:absolute;
+	left:48%;
+	top:60%;
+	background:url('../images/splash-loader.gif') center center no-repeat;
+}
+
+.splash .splash-icon {
+	width:60px;
+	height:60px;
+	position:absolute;
+	left:45%;
+	top:45%;
+	background:url('../images/splash-icon.png') center center no-repeat;
+}
+
+
+/**
+* Nav
+*/
+
+.nav {
+	position:relative;
+}
+
+.nav a {
+	padding:0;
+	margin:0;
+}
+
+.nav ul {
+	margin:0;
+}
+
+.nav ul li {
+	list-style:none;
+}
+
+.nav ul li.menu a {
+	display:block;
+	width:20px;
+	height:20px;
+	margin:10px;
+	text-indent:-5000px;
+}
+
+.nav ul li {
+	font-family:'Din Condensed',arial;
+	text-transform:uppercase;
+	width:100%;
+	background:#fff;
+	margin:0;
+	padding:7px 0 7px 0;
+	text-indent:44px;
+}
+
+.msie .nav ul li {
+	font-size:0.7em;
+	text-indent:50px;
+}
+
+.nav ul li.shim{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:1;
+
+}
+

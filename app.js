@@ -2,8 +2,8 @@ var express = require('express'),
     app = express();
 //    minify = require('express-minify');
 
-var SERVER= { PORT: 80,
-			  maxAge: 60};
+var SERVER= { PORT: 8000,
+			  maxAge: 0};
 
 /**
  * Middleware
