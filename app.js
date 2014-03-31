@@ -2,7 +2,7 @@ var express = require('express'),
     app = express();
 //    minify = require('express-minify');
 
-var SERVER= { PORT: 8000,
+var SERVER= { PORT: process.env.PORT || 8000,
 			  maxAge: 0};
 
 /**

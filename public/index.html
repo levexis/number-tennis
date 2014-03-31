@@ -34,6 +34,7 @@
         <div id="answer2" class="answer">&nbsp;</div>
         <div id="answer3" class="answer">&nbsp;</div>
         <div id="answer4" class="answer">&nbsp;</div>
+        <div id="answer5" class="answer">&nbsp;</div>
     </div>
     <div class="score" id="scoreboard">score: <span id="score">0</span> / <span id="games">0</span></div> 
     <footer>
@@ -79,11 +80,15 @@ $(document).ready(function(){
 
     }
 
+    $('#target').click( function (e) {
+        e.currentTarget.innerHTML = randy (100)+'' ;
+    });
+
     $('#service').click( function (e) {
         var target = $('#target').text() *1 
             serve = randy ( target ),
             games = ( $('#games').text() ) * 1,
-            choices= generateChoices ( serve, target, 4 ),
+            choices= generateChoices ( serve, target, 5 ),
             i=1;
         _.each ( choices, function ( choice ) {
             $('#answer' + i).text(choice);
@@ -108,13 +113,13 @@ $(document).ready(function(){
         if ( isAnswerCorrect ( answer , serve , target ) ) {
             $('#score').text( score + 1 );
             $('#scoreboard').css('background', 'green');            
-            $('#service').css('background', 'green');            
+            $('#service').css('background', 'green');
+            // could increment target or randomise it!
+            $('#target').text( target + 1 );
         } else {
-            $('#scoreboard').css('background', 'red');            
+            $('#scoreboard').css('background', 'red');
             $('#service').css('background', 'red');            
         }
-        // could increment target or randomise it!
-//         $('#target').text( target + 10 );
 
         // increment games and serve again
         $('#service').click();
