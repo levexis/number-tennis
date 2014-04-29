@@ -12,6 +12,12 @@
       </script>
     <![endif]-->
   </head>
+  <script>
+      //initial values
+      CHOICES=5;
+      TARGET=10;
+      TIMEOUT=4; // timeout for hard mode in ms
+  </script>
   <body>
 <!--    <div id="nav" class="nav clearfix"> 
       <ul> 
@@ -23,20 +29,29 @@
     <h1>Number Tennis - TARGET: <span id="target">10</span></h1>
 <!--    <div id="instructions">
         Instuctions
+    </div> -->
+    <div id="options" class="options">
+        <div>Game Type:<select id="difficulty">
+            <option value="easy" selected>Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option></select>
+         </div>
+
     </div>
-    <div id="options">
-        <div id="sound">Sound</div>
-        <div id="difficulty">Difficulty</div>
-    </div> !-->
     <div id="service" class="ball serve">start</div>
-    <div id="answers">
-        <div id="answer1" class="answer">&nbsp;</div>
-        <div id="answer2" class="answer">&nbsp;</div>
-        <div id="answer3" class="answer">&nbsp;</div>
-        <div id="answer4" class="answer">&nbsp;</div>
-        <div id="answer5" class="answer">&nbsp;</div>
-    </div>
-    <div class="score" id="scoreboard">score: <span id="score">0</span> / <span id="games">0</span></div> 
+    <div id="answers"></div>
+        <script>
+            // create answer divs and set target
+            $('#id' ).text=TARGET;
+            for ( var i= 1; i<= window.CHOICES ; i++ )            {
+                var subDiv = document.createElement( "div" );
+                $( subDiv ).attr( "class", "answer" );
+                $( subDiv ).attr( "id", "answer" + i );
+                $( subDiv ).html( '&nbsp;' );
+                $( '#answers' ).append( subDiv );
+            }
+        </script>
+    <div class="score" id="scoreboard">score: <span id="score">0</span> / <span id="games">0</span></div>
     <footer>
       <p>Copyight 2014 Thomas JM Cook</p>
     </footer>
@@ -50,7 +65,7 @@ $(document).ready(function(){
         return Math.ceil( Math.random() * max );
     }
     function generateChoices (serve,target,options) {
-        options = options || 3;            
+        options = options || CHOICES;
         var choice,
             crashTest = 0,
             out = [];
@@ -61,17 +76,21 @@ $(document).ready(function(){
             } else {
                 // spread could be effected by difficulty, ie maybe 1 difference?
                 choice = randy ( target );
-                while ( isAnswerCorrect ( choice , serve, target ) && crashTest++ < 50 ) { 
+                // we want 5 unique choices
+                while ( ( isAnswerCorrect ( choice , serve, target ) ||
+                        choice === target ||
+                        !choice*1 ||
+                        out.indexOf (choice) > -1 ) &&
+                        crashTest++ < 50 ) {
                     choice = randy ( target );
                 }
-                out.push ( choice ); 
+                out.push ( choice );
             }
         }
         return out;    
     }
     
     function isAnswerCorrect ( answer , serve, target ) {
-
         if ( ( answer + serve) === target ) {
             return true;
         } else {
@@ -81,27 +100,52 @@ $(document).ready(function(){
     }
 
     $('#target').click( function (e) {
-        e.currentTarget.innerHTML = randy (100)+'' ;
+        if ( $('#difficulty').val() === 'easy') {
+            // 10,20... 100
+            e.currentTarget.innerHTML = ( randy (10) * 10 )+'' ;
+        } else if ( $('#difficulty').val() === 'medium') {
+            // random number between 1 and 100, this ensures there are enough options for CHOICES unique answers
+            e.currentTarget.innerHTML = CHOICES + 1 + ( randy (100 - CHOICES - 1) )+ '' ;
+        } else{
+            e.currentTarget.innerHTML = CHOICES + 1 + ( randy (500 - CHOICES - 1) )+ '' ;
+        }
+        $('#service').text(0),
+        $('#score').text(0);
+        $('#service').click();
     });
 
     $('#service').click( function (e) {
-        var target = $('#target').text() *1 
-            serve = randy ( target ),
+        if ( typeof window.timer !== 'undefined') {
+            window.clearInterval( window.timer );
+        }
+        var target = $('#target').text() *1
+            serve = randy ( target -1 ),
             games = ( $('#games').text() ) * 1,
-            choices= generateChoices ( serve, target, 5 ),
+            choices= generateChoices ( serve, target, CHOICES ),
             i=1;
         _.each ( choices, function ( choice ) {
             $('#answer' + i).text(choice);
             i++;
         });
         $('#service').text(serve);
-        // could set a timeout here ot a countdown 
         if ( firstTime ) {
             firstTime = false;
         } else {
             games = games + 1
         }
-        $('#games').text(games);        
+        $('#games').text(games);
+        // set a timeOut if in hard mode
+        if ( $('#difficulty').val() === 'hard') {
+            window.lastStart = new Date().getTime();
+            window.timer = window.setInterval ( function () {
+                    if ( new Date().getTime() - window.lastStart >= TIMEOUT * 1000 ) {
+                        $('#service').click()
+                } else {
+                   console.log( new Date().getTime() - window.lastStart );
+                }
+
+            }, TIMEOUT * 1000);
+        }
     });
 
     $('.answer').click( function (e) {
@@ -109,13 +153,14 @@ $(document).ready(function(){
             target = $('#target').text() *1, 
             serve = $('#service').text() *1, 
             score = $('#score').text() *1;
-        
         if ( isAnswerCorrect ( answer , serve , target ) ) {
             $('#score').text( score + 1 );
             $('#scoreboard').css('background', 'green');            
             $('#service').css('background', 'green');
             // could increment target or randomise it!
-            $('#target').text( target + 1 );
+            if ( $('#difficulty').val() !== 'easy' ) {
+                $( '#target' ).text( target + 1 );
+            }
         } else {
             $('#scoreboard').css('background', 'red');
             $('#service').css('background', 'red');            
