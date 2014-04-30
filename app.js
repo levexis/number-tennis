@@ -1,5 +1,9 @@
-var express = require('express'),
-    app = express();
+var express = require('express')
+, http = require('http');
+
+var app = express();
+var server = http.createServer(app);
+
 //    minify = require('express-minify');
 
 var SERVER= { PORT: process.env.PORT || 8000,
@@ -31,7 +35,5 @@ app.use(express.compress());
 //app.use(express.session);
 //app.use(flash());
 
-// dispatch to route
-app.use(app.router);
 
 module.exports = app.listen( SERVER.PORT );
