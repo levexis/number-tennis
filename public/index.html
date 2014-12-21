@@ -31,10 +31,19 @@
         Instuctions
     </div> -->
     <div id="options" class="options">
-        <div>Game Type:<select id="difficulty">
+        <div>Game Type:<br /><select id="game">
+            <option value="add" selected>Addition</option>
+            <option value="subtract">Subtraction</option>
+            <option value="multiply">Multiplication</option>
+            <option value="divide">Division</option>
+            </select>
+        </div>
+
+        <div>Difficulty:<br /><select id="difficulty">
             <option value="easy" selected>Easy</option>
             <option value="medium">Medium</option>
-            <option value="hard">Hard</option></select>
+            <option value="hard">Hard</option>
+            </select>
          </div>
 
     </div>
@@ -96,7 +105,6 @@ $(document).ready(function(){
         } else {
             return false;
         }
-
     }
 
     $('#target').click( function (e) {

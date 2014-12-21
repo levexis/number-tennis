@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Number Tennis</title>
+
+    <!-- ionic css -->
+    <link href="js/vendor/ionic/release/css/ionic.css" rel="stylesheet">
+    <link href="js/vendor/ionicons/css/ionicons.css" rel="stylesheet">
+
+    <!-- your app's css -->
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+    <!-- ionic/angularjs scripts -->
+    <script src="js/vendor/ionic/release/js/ionic.bundle.js"></script>
+    <script src="js/vendor/prefixfree/prefixfree.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's script -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+</head>
+
+<body>
+<!-- this works better than the grid which breaks on bigger numbers as does not dynamically size !-->
+<div class="nt-play">
+    <div class="nt-equation nt-ball animated bounceInRight"><span class="nt-ball">400</span></div>
+    <div class="nt-spacer"> </div>
+    <div class="nt-equation">+</div>
+    <div class="nt-spacer"> </div>
+    <div class="nt-equation">?</div>
+    <div class="nt-spacer"> </div>
+    <div class="nt-equation">=</div>
+    <div class="nt-spacer"> </div>
+    <div class="nt-equation nt-target">1320</div>
+</div>
+<!--
+<div class="row row-center">
+    <div class="col nt-formula nt-ball animated bounceInRight"><span>400</span></div>
+    <div class="col col-10 nt-formula">+</div>
+    <div class="col col-10 nt-formula">?</div>
+    <div class="col col-10 nt-formula">=</div>
+    <div class="col nt-formula">1320</div>
+</div>
+-->
+<div class="row">
+    <div class="col" style="text-align: center"><button class="button button-large button-light">1</button></div>
+    <div class="col" style="text-align: center"><button class="button button-large button-light">2</button></div>
+    <div class="col" style="text-align: center"><button class="button button-large button-light">3</button></div>
+    <div class="col" style="text-align: center"><button class="button button-large button-light">4</button></div>
+    <div class="col" style="text-align: center"><button class="button button-large button-light">5</button></div>
+</div>
+
+</body>
+</html>

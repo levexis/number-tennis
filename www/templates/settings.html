@@ -1,0 +1,47 @@
+<ion-view title="Number Tennis">
+  <ion-content has-tabs="true" has-header="true" padding="true">
+      <div class="list list-inset">
+          <div class="item item-divider">
+              About You
+          </div>
+          <label class="item item-input">
+        <span class="input-label">Your name</span>
+        <input type="text" placeholder="enter name" ng-model="settings.name">
+          </label>
+          <label class="item item-input">
+                <span class="input-label">Your age</span>
+                <input type="number" placeholder="current age" ng-model="settings.age">
+          </label>
+          <div class="item item-divider">
+              Game options
+          </div>
+              <label class="item item-input item-select">
+                  <div class="input-label">
+                      Difficulty
+                  </div>
+                  <select ng-model="settings.difficulty">
+                      <option>Easy</option>
+                      <option>Normal</option>
+                      <option>Hard</option>
+                  </select>
+              </label>
+              <label class="item item-input item-select">
+                  <div class="input-label">
+                      Points
+                  </div>
+                  <select ng-model="settings.points">
+                      <option>10</option>
+                      <option>25</option>
+                      <option>50</option>
+                      <option>100</option>
+                      <option>Unlimited</option>
+                  </select>
+              </label>
+              <ion-toggle ng-model="settings.saveScores" ng-checked="settings.saveScores">Save Scores</ion-toggle>
+        </div>
+      </div>
+      <p style="text-align: center; color: lightgray">
+          Version 1.0. Copyright Daddy's Work Ltd 2014
+      </p>
+  </ion-content>
+</ion-view>

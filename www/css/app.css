@@ -1,0 +1,133 @@
+.nt-countdown {
+   display: block;
+   width:100%;
+   height: 100%;
+   background: whitesmoke;
+   position: fixed;
+   z-index: 10;
+    top: 0px;
+    left: 0px;
+
+}
+.nt-countdown span {
+    font-size: 100pt;
+    color: gray;
+    text-align: center;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute !important;
+    margin:0 auto;
+    width:100%;
+}
+
+
+.nt-ball span {
+    border-radius: 100%;
+    text-transform: uppercase;
+    background: darkorange;
+    color: #fff;
+    height: 100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 20px;
+}
+
+.lost span {
+    background: red;
+}
+.won span {
+    background: green;
+}
+
+.nt-formula {
+    padding: 50px 0px;
+    font-size: 30pt;
+    text-align: center;
+}
+.nt-mystery {
+    color: lightgray;
+    font-size: 40pt;
+}
+
+.nt-play {
+    display: inline-block;
+    width: 100%;
+    padding: 50px 10px;
+    font-size: 30pt;
+}
+
+.nt-equation {
+    display: inline;
+    float: left;
+    text-align: center;
+}
+.nt-spacer {
+    display: inline;
+    float: left;
+    width: 100%;
+}
+
+
+.nt-answers {
+    text-align: center;
+}
+.nt-navicon {
+    font-size: 32px;
+    padding: 0px 10px;
+}
+
+
+.animation-10s {
+    animation-duration: 10s !important;
+    -webkit-animation-duration: 10s !important;
+    -moz-animation-duration: 10s !important;
+}
+.animation-9s {
+    animation-duration: 9s !important;
+    -webkit-animation-duration: 9s !important;
+    -moz-animation-duration: 9s !important;
+}
+.animation-8s {
+    animation-duration: 8s !important;
+    -webkit-animation-duration: 8s !important;
+    -moz-animation-duration: 8s !important;
+}
+.animation-7s {
+    animation-duration: 7s !important;
+    -webkit-animation-duration: 7s !important;
+    -moz-animation-duration: 7s !important;
+}
+.animation-6s {
+    animation-duration: 6s !important;
+    -webkit-animation-duration: 6s !important;
+    -moz-animation-duration: 6s !important;
+}
+.animation-5s {
+    animation-duration: 5s !important;
+    -webkit-animation-duration: 5s !important;
+    -moz-animation-duration: 5s !important;
+}
+.animation-4s {
+    animation-duration: 4s !important;
+    -webkit-animation-duration: 4s !important;
+    -moz-animation-duration: 4s !important;
+}
+.animation-3s {
+    animation-duration: 3s !important;
+    -webkit-animation-duration: 3s !important;
+    -moz-animation-duration: 3s !important;
+}
+.animation-2s {
+    animation-duration: 2s !important;
+    -webkit-animation-duration: 2s !important;
+    -moz-animation-duration: 2s !important;
+}
+.animation-1s {
+    animation-duration: 1s !important;
+    -webkit-animation-duration: 1s !important;
+    -moz-animation-duration: 1s !important;
+}
