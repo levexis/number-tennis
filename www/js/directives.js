@@ -37,9 +37,11 @@ angular.module('numTen.directives', [])
                         attempts: 0 };
         },
         template : '<div class="row row-bottom" style="padding-top: 100px;">\
-                <div class="button-bar">\
-                    <button class="button button-dark button-clear">{{score.correct}} / {{score.attempts}}</button>\
-                </div>'
+                <div class="col text-center">\
+                    <p>{{score.correct}} / {{score.attempts}}</p>\
+                    <p><progress max="{{game.points}}" value="{{score.attempts}}"></progress></p>\
+                </div>\
+        </div>'
     };
 })
 .directive('ntServe' , function ($log , $timeout) {

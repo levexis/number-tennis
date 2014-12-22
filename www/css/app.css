@@ -131,3 +131,11 @@
     -webkit-animation-duration: 1s !important;
     -moz-animation-duration: 1s !important;
 }
+progress[value] {
+    width: 30%;
+}
+p {
+    margin: 0px;
+    font-size: 14pt;
+    color: darkslategrey;
+}
