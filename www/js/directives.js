@@ -1,26 +1,26 @@
 angular.module('numTen.directives', [])
 .directive('ntCountdown', function( $timeout ) {
     var outTemplate='';
-    outTemplate += '<div class="nt-countdown" ng-show="countdown.secs"><span class="centered">{{countdown.secs}}</span></div>';
+    outTemplate += '<div class="nt-countdown" ng-show="view.countdown.secs"><span class="centered">{{view.countdown.secs}}</span></div>';
     return {
         restrict : "E",
         link : function ( $scope, element, attributes ) {
             // intial secs cans be passdown as an attribute
-            $scope.countdown = {
+            $scope.view.countdown = {
                 secs : ( attributes.secs || 0 ) * 1 ,
                 start : function () {
-                    if ( $scope.countdown.secs-- > 0 ) {
-                        $timeout( $scope.countdown.start, 1000 );
+                    if ( $scope.view.countdown.secs-- > 0 ) {
+                        $timeout( $scope.view.countdown.start, 1000 );
                     } else {
-                        $scope.countdown.secs = 0;
+                        $scope.view.countdown.secs = 0;
                         $scope.$emit('countdown','complete');
                     }
                 }
             };
-            $scope.$watch('countdown.secs', function ( now , before) {
+            $scope.$watch('view.countdown.secs', function ( now , before) {
                 // start the countdown
                 if (now && ( !before || ( now === before ) ) ) {
-                    $timeout(  $scope.countdown.start, 1000 );
+                    $timeout(  $scope.view.countdown.start, 1000 );
                 }
             });
         },
@@ -33,12 +33,12 @@ angular.module('numTen.directives', [])
     return {
         restrict : "E",
         link : function ( $scope, element, attributes ) {
-            $scope.score={ correct: 0,
+            $scope.view.score={ correct: 0,
                         attempts: 0 };
         },
         template : '<div class="row row-bottom" style="padding-top: 100px;">\
                 <div class="col text-center">\
-                    <p>{{score.correct}} / {{score.attempts}}</p>\
+                    <p>{{view.score.correct}} / {{view.score.attempts}}</p>\
                     <p><progress max="{{game.points}}" value="{{score.attempts}}"></progress></p>\
                 </div>\
         </div>'
@@ -51,9 +51,9 @@ angular.module('numTen.directives', [])
             $scope.$watch('point.won', function ( now , before) {
                 $log.debug('point won' , now , element);
                 if (typeof now === 'boolean') {
-                    $scope.score.attempts++;
+                    $scope.view.score.attempts++;
                     if ( now ) {
-                        $scope.score.correct++;
+                        $scope.view.score.correct++;
                         element.addClass( 'won' );
                     } else if ( now === false ) {
                         element.addClass( 'lost' );
@@ -64,7 +64,7 @@ angular.module('numTen.directives', [])
                     }
                     // wait for point outcome animation before serving next
                     $timeout ( function () {
-                        if ( $scope.score.attempts < $scope.game.points ) {
+                        if ( $scope.view.score.attempts < $scope.game.points ) {
                             $scope.serveNext();
                             delete $scope.point.won;
                             $scope.point.served = false;
@@ -81,7 +81,7 @@ angular.module('numTen.directives', [])
             // this is all a bit flakey if someone is super quick
             $scope.point.served = false;
             $scope.$watch('point.served' , function (now , before) {
-                if ( !now ) {
+                if ( $scope.point.serve && !now  ) {
                     // if someone answers before serve finished then cancel old loop
                     if ( $scope.point.$served ) {
                         $timeout.cancel( $scope.point.$served );

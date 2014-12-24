@@ -14,11 +14,18 @@ angular.module('numTen.controllers', [])
   $scope.pet = PetService.get($stateParams.petId);
 });
 */
-.controller('AddCtrl' , function ( $scope ) {
+.controller('SettingsCtrl' , function ( $scope , $rootScope, prefService) {
+    // get pointer to  settings
+    $scope.settings = prefService.getSettings();
+})
+.controller('AddCtrl' , function ( $scope , $state, $timeout, prefService) {
     var game;
     // gets a number between 1 and max
     function randy( max ) {
         return Math.ceil( Math.random() * max );
+    }
+    function getTarget ( game) {
+        return randy( game.max / game.increments ) * game.increments;
     }
     function generateChoices (serve,target,options) {
         var choice,
@@ -69,16 +76,32 @@ angular.module('numTen.controllers', [])
             max : 500,
             increments : 1,
             increaseTarget: true,
-            decreaseTime: true, // on success TBD
+            decreaseTime: true, // on success TBD, possibly down to 1s until they get 1 wrong
             timeout : 5,
             choices : 5
         }
     };
-    game =  $scope.game [ $scope.settings.difficulty ] ||  $scope.game.Easy;
-    $scope.game.points = $scope.settings.points || game.points;
+    game =  $scope.game [ prefService.getSetting( 'difficulty' ) ];
+    $scope.game.points = prefService.getSetting( 'points' );
+    $scope.view = {};
 
-    $scope.point = { target : randy ( game.max / game.increments ) * game.increments,
-                    timeout : game.timeout};
+    $scope.point = { target : getTarget(game),
+        timeout : game.timeout};
+
+    $scope.restart = function () {
+        $scope.point.target = getTarget ( game );
+        $scope.view.countdown.secs = 1;
+        delete $scope.point.won;
+        delete $scope.point.serve;
+        $scope.point.served = false;
+        if ( $scope.view.score ) {
+            $scope.view.score.correct = 0;
+            $scope.view.score.attempts = 0;
+        }
+        if ( $scope.point.$served ) {
+            $timeout.cancel( $scope.point.$served );
+        }
+    };
     $scope.serveNext = function() {
         if ( game.increaseTarget ) {
             $scope.point.target += 1;
@@ -89,7 +112,10 @@ angular.module('numTen.controllers', [])
     $scope.checkAnswer = function ( choice ) {
         $scope.point.won = isAnswerCorrect ( choice * 1 , $scope.point.serve , $scope.point.target );
     }
-    $scope.$watch('countdown',function ( done ) {
-        $scope.serveNext();
-    });
+    $scope.$watch('view.countdown',function ( value ) {
+        if ( !value || !value.secs ) {
+            $scope.serveNext();
+        }
+    }, true);
+    $scope.state = $state;
 });
