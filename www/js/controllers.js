@@ -18,6 +18,10 @@ angular.module('numTen.controllers', [])
     // get pointer to  settings
     $scope.settings = prefService.getSettings();
 })
+.controller('ScoresCtrl' , function ( $scope , $rootScope, scoreService) {
+    // get pointer to  settings
+    $scope.scores = scoreService.getScores();
+})
 .controller('AddCtrl' , function ( $scope , $state, $timeout, prefService) {
     var game;
     // gets a number between 1 and max
@@ -66,12 +70,20 @@ angular.module('numTen.controllers', [])
         Normal : {
             points : 25, // defaults
             max : 100,
-            increments : 1,
+            increments : 10,
             increaseTarget: false,
             timeout : 10,
             choices : 4
         },
         Hard : {
+            points : 25, // defaults
+            max : 100,
+            increments : 1,
+            increaseTarget: true,
+            timeout : 8,
+            choices : 4
+        },
+        Insane : {
             points : 25, // defaults
             max : 500,
             increments : 1,
@@ -81,16 +93,16 @@ angular.module('numTen.controllers', [])
             choices : 5
         }
     };
-    game =  $scope.game [ prefService.getSetting( 'difficulty' ) ];
     $scope.game.points = prefService.getSetting( 'points' );
-    $scope.view = {};
-
+    $scope.view = $scope.view || {};
+    $scope.view.difficulty = prefService.getSetting( 'difficulty' );
+    game =  $scope.game [ $scope.view.difficulty ];
     $scope.point = { target : getTarget(game),
         timeout : game.timeout};
 
     $scope.restart = function () {
         $scope.point.target = getTarget ( game );
-        $scope.view.countdown.secs = 1;
+        $scope.view.countdown.set(1);
         delete $scope.point.won;
         delete $scope.point.serve;
         $scope.point.served = false;
@@ -108,6 +120,7 @@ angular.module('numTen.controllers', [])
         }
         $scope.point.serve = randy ( $scope.point.target -1 );
         $scope.point.choices = generateChoices ( $scope.point.serve , $scope.point.target , game.choices ); // progress bar?
+        $scope.point.served = false;
     };
     $scope.checkAnswer = function ( choice ) {
         $scope.point.won = isAnswerCorrect ( choice * 1 , $scope.point.serve , $scope.point.target );
@@ -118,4 +131,5 @@ angular.module('numTen.controllers', [])
         }
     }, true);
     $scope.state = $state;
+    console.log('add controller',$scope);
 });

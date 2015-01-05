@@ -1,7 +1,7 @@
 .nt-countdown {
    display: block;
    width:100%;
-   height: 100%;
+   height: 800px;
    background: whitesmoke;
    position: fixed;
    z-index: 10;
@@ -9,6 +9,7 @@
     left: 0px;
 
 }
+/*
 .nt-countdown span {
     font-size: 100pt;
     color: gray;
@@ -23,8 +24,21 @@
     margin:0 auto;
     width:100%;
 }
-
-
+*/
+.nt-countdown span {
+    font-size: 100pt;
+    color: gray;
+    text-align: center;
+    top: 15%;
+    -webkit-transform: translateY(-15%);
+    -moz-transform: translateY(-15%);
+    -ms-transform: translateY(-15%);
+    -o-transform: translateY(-15%);
+    transform: translateY(-15%);
+    position: absolute !important;
+    margin:0 auto;
+    width:100%;
+}
 .nt-ball span {
     border-radius: 100%;
     text-transform: uppercase;
@@ -153,4 +167,7 @@ p {
     font-size: 18px;
     font-family: 'courier new';
     padding-top: 100px;
+}
+.nt-difficulty {
+    color: darkgray;
 }

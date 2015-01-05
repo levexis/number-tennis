@@ -1,8 +1,24 @@
 <ion-view title="Scores">
   <ion-content has-tabs="true" has-header="true" padding="true">
-      <div class="button-bar ">
-          <a class="button button-stable">Me</a>
+     <div class="button-bar ">
+          <a class="button button-stable" style="border-bottom: 0px;">Me</a>
           <a class="button button-light">Everyone</a>
-      </div>
+     </div>
+     <div class="row bar-header item-divider" ng-show="!scores.length">
+         <div class="col">When</div>
+         <div class="col">What</div>
+         <div class="col">Who</div>
+         <div class="col">Type</div>
+         <div class="col">Points</div>
+         <div class="col">Won</div>
+     </div>
+     <div class="row" ng-repeat="score in scores">
+            <div class="col">{{score.when | date}}</div>
+            <div class="col">{{score.what}}</div>
+            <div class="col">{{score.name}}</div>
+            <div class="col">{{score.difficulty}}</div>
+            <div class="col">{{score.points}}</div>
+            <div class="col">{{score.won}}</div>
+    </div>
   </ion-content>
 </ion-view>

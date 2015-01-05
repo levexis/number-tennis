@@ -26,7 +26,23 @@ angular.module('numTen.services', [])
             return _settings;
         }
     };
-});
+})
+.factory('scoreService', function($rootScope , $log ) {
+        // retrieve from local storage
+        var _scores = JSON.parse ( window.localStorage.getItem('numTen.scores') ) || [];
+
+        return {
+            getScores: function ( key ) {
+                return _scores;
+            },
+            saveScore: function ( data ) {
+                if (typeof data === 'object') {
+                    _scores.push(data);
+                    window.localStorage.setItem( 'numTen.scores', JSON.stringify( _scores ) );
+                }
+            }
+        };
+    });
 
 
 
