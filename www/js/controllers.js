@@ -23,7 +23,6 @@ angular.module('numTen.controllers', [])
     $scope.scores = scoreService.getScores();
 })
 .controller('AddCtrl' , function ( $scope , $state, $timeout, prefService) {
-    var game;
     // gets a number between 1 and max
     function randy( max ) {
         return Math.ceil( Math.random() * max );
@@ -58,13 +57,16 @@ angular.module('numTen.controllers', [])
     function isAnswerCorrect ( answer , serve, target ) {
         return ( ( answer + serve) === target );
     }
+    function nextTarget ( current ) {
+        return current+1;
+    }
     $scope.game = { name : 'Addition',
         operator : '+',
         Easy : {
             points : 25, // defaults
             max : 20,
             increments : 10,
-            increaseTarget: false,
+            moveTarget: false,
             timeout : 0,
             choices : 3
         },
@@ -72,7 +74,7 @@ angular.module('numTen.controllers', [])
             points : 25, // defaults
             max : 100,
             increments : 10,
-            increaseTarget: false,
+            moveTarget: false,
             timeout : 10,
             choices : 4
         },
@@ -80,7 +82,7 @@ angular.module('numTen.controllers', [])
             points : 25, // defaults
             max : 100,
             increments : 1,
-            increaseTarget: true,
+            moveTarget: true,
             timeout : 8,
             choices : 4
         },
@@ -88,21 +90,28 @@ angular.module('numTen.controllers', [])
             points : 25, // defaults
             max : 500,
             increments : 1,
-            increaseTarget: true,
+            moveTarget: true,
             decreaseTime: true, // on success TBD, possibly down to 1s until they get 1 wrong
             timeout : 5,
             choices : 5
-        }
+        },
+        isAnswerCorrect: isAnswerCorrect,
+        randy: randy,
+        getTarget: getTarget,
+        generateChoices: generateChoices,
+        nextTarget: nextTarget
     };
-    /* this is common across types */
+    console.log('add controller',$scope);
+})
+.controller('GameCtrl' , function ( $scope , $state, $timeout, prefService) {
     $scope.game.points = prefService.getSetting( 'points' );
     $scope.view = $scope.view || {};
     $scope.view.difficulty = prefService.getSetting( 'difficulty' );
-    game =  $scope.game [ $scope.view.difficulty ];
-    $scope.point = { target : getTarget(game),
-        timeout : game.timeout};
+    $scope.point = { target : $scope.game.getTarget( $scope.game[$scope.view.difficulty] ),
+        timeout : $scope.game[$scope.view.difficulty].timeout};
+
     $scope.restart = function () {
-        $scope.point.target = getTarget ( game );
+        $scope.point.target = getTarget ( $scope.game[$scope.view.difficulty] );
         $scope.view.countdown.set(1);
         delete $scope.point.won;
         delete $scope.point.serve;
@@ -117,20 +126,21 @@ angular.module('numTen.controllers', [])
         }
     };
     $scope.serveNext = function() {
-        if ( game.increaseTarget ) {
-            $scope.point.target += 1;
+        if ( $scope.game[$scope.view.difficulty].moveTarget ) {
+            $scope.point.target = $scope.game.nextTarget($scope.point.target);
         }
-        $scope.point.serve = randy ( $scope.point.target -1 );
-        $scope.point.choices = generateChoices ( $scope.point.serve , $scope.point.target , game.choices ); // progress bar?
+        $scope.point.serve = $scope.game.randy ( $scope.point.target -1 );
+        $scope.point.choices = $scope.game.generateChoices ( $scope.point.serve , $scope.point.target , $scope.game[$scope.view.difficulty].choices ); // progress bar?
         $scope.point.served = false;
     };
     $scope.checkAnswer = function ( choice ) {
-        $scope.point.won = isAnswerCorrect ( choice * 1 , $scope.point.serve , $scope.point.target );
-    }
+        $scope.point.won = $scope.game.isAnswerCorrect ( choice * 1 , $scope.point.serve , $scope.point.target );
+    };
     $scope.$watch('view.countdown',function ( value ) {
         if ( !value || !value.secs ) {
             $scope.serveNext();
         }
     }, true);
     $scope.state = $state;
+    console.log('game ctrl',$scope);
 });
