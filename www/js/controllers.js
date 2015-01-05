@@ -105,6 +105,7 @@ angular.module('numTen.controllers', [])
         $scope.view.countdown.set(1);
         delete $scope.point.won;
         delete $scope.point.serve;
+        delete $scope.game.over;
         $scope.point.served = false;
         if ( $scope.view.score ) {
             $scope.view.score.correct = 0;
