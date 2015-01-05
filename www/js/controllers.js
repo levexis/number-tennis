@@ -59,6 +59,7 @@ angular.module('numTen.controllers', [])
         return ( ( answer + serve) === target );
     }
     $scope.game = { name : 'Addition',
+        operator : '+',
         Easy : {
             points : 25, // defaults
             max : 20,

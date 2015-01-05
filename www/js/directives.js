@@ -126,7 +126,7 @@ angular.module('numTen.directives', [])
         },
         template : '<div class="row row-top animated" nt-serve-animation style="padding: 20px" ng-show="!game.over">\
     <div class="col nt-formula nt-ball animated" ng-show="point.serve" ng-class="{ \'bounceInRight\' : point.serve && !point.served, \'bounceOutRight\' : point.won, \'fadeOutLeftBig\' : point.won===false }"><span>{{point.serve}}</span></div>\
-    <div class="col col-10 nt-formula">+</div>\
+    <div class="col col-10 nt-formula">{{game.operator}}</div>\
     <div class="col col-10 nt-formula nt-mystery">?</div>\
     <div class="col col-10 nt-formula">=</div>\
     <div class="col nt-formula">{{point.target}}</div>\
