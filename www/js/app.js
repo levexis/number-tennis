@@ -62,7 +62,8 @@ angular.module('numTen', ['ionic', 'numTen.services', 'numTen.controllers', 'num
             url: '/scores',
             views: {
                 'scores-tab': {
-                    templateUrl: 'templates/scores.html'
+                    templateUrl: 'templates/scores.html',
+                    controller : 'ScoresCtrl'
                 }
             }
       });

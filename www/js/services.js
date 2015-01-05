@@ -11,7 +11,7 @@ angular.module('numTen.services', [])
     /* watches pref changes, saves and processes certain prefs like downloadable */
     $rootScope.$watch('settings', function ( after, before) {
         if ( !_.isEqual(before,after) ) {
-            window.localStorage.setItem( 'numTen.settings', JSON.stringify( _settings ) );
+            window.localStorage.setItem( 'numTen.settings', angular.toJson( _settings ) );
         }
         _settings = after;
         // don't forget object comparison
@@ -30,15 +30,17 @@ angular.module('numTen.services', [])
 .factory('scoreService', function($rootScope , $log ) {
         // retrieve from local storage
         var _scores = JSON.parse ( window.localStorage.getItem('numTen.scores') ) || [];
-
         return {
-            getScores: function ( key ) {
+            getScores: function ( ) {
+                console.log ('scores',_scores);
                 return _scores;
             },
             saveScore: function ( data ) {
                 if (typeof data === 'object') {
                     _scores.push(data);
-                    window.localStorage.setItem( 'numTen.scores', JSON.stringify( _scores ) );
+                    // use angular.toJson as this removes internals like hashKeys which can then clash when parsed
+                    // again
+                    window.localStorage.setItem( 'numTen.scores', angular.toJson ( _scores ) );
                 }
             }
         };

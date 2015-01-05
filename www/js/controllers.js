@@ -94,13 +94,13 @@ angular.module('numTen.controllers', [])
             choices : 5
         }
     };
+    /* this is common across types */
     $scope.game.points = prefService.getSetting( 'points' );
     $scope.view = $scope.view || {};
     $scope.view.difficulty = prefService.getSetting( 'difficulty' );
     game =  $scope.game [ $scope.view.difficulty ];
     $scope.point = { target : getTarget(game),
         timeout : game.timeout};
-
     $scope.restart = function () {
         $scope.point.target = getTarget ( game );
         $scope.view.countdown.set(1);
@@ -133,5 +133,4 @@ angular.module('numTen.controllers', [])
         }
     }, true);
     $scope.state = $state;
-    console.log('add controller',$scope);
 });
