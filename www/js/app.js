@@ -30,12 +30,22 @@ angular.module('numTen', ['ionic', 'numTen.services', 'numTen.controllers', 'num
               }
           }
       } )
-      .state('tab.play', {
+      .state('tab.play-add', {
           url : '/play/add',
           views : {
               'play-tab' : {
                   templateUrl : 'templates/game.html',
                   controller : 'AddCtrl'
+              }
+          }
+      })
+      // should this be a substate of play?
+      .state('tab.play-sub', {
+          url : '/play/subtract',
+          views : {
+              'play-tab' : {
+                  templateUrl : 'templates/game.html',
+                  controller : 'SubCtrl'
               }
           }
       })

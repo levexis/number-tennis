@@ -33,20 +33,20 @@ angular.module('numTen.controllers', [])
     function generateChoices (serve,target,options) {
         var choice,
             crashTest = 0,
-            out = [];
-        correct = randy ( options ) ; // which one will be correct
+            out = [],
+            correct = randy ( options ) ; // which one will be correct
         for ( var i=1; i<=options ;i++) {
             if ( i === correct ) {
-                out.push ( target - serve);
+                out.push ( serve - target);
             } else {
                 // spread could be effected by difficulty, ie maybe 1 difference?
-                choice = randy ( target );
+                choice = randy ( target * 2 );
                 // we want 5 unique choices
                 while ( ( isAnswerCorrect ( choice , serve, target ) ||
                     choice === target ||
                     !choice*1 ||
                     out.indexOf (choice) > -1 ) &&
-                    crashTest++ < 50 ) {
+                    crashTest++ < 1000 ) {
                     choice = randy ( target );
                 }
                 out.push ( choice );
@@ -55,13 +55,94 @@ angular.module('numTen.controllers', [])
         return out;
     }
     function isAnswerCorrect ( answer , serve, target ) {
-        return ( ( answer + serve) === target );
+        return ( ( serve - answer ) === target );
     }
     function nextTarget ( current ) {
         return current+1;
     }
     $scope.game = { name : 'Addition',
         operator : '+',
+        Easy : {
+            points : 25, // defaults
+            max : 10,
+            increments : 10,
+            moveTarget: false,
+            timeout : 0,
+            choices : 3
+        },
+        Normal : {
+            points : 25, // defaults
+            max : 50,
+            increments : 10,
+            moveTarget: false,
+            timeout : 10,
+            choices : 4
+        },
+        Hard : {
+            points : 25, // defaults
+            max : 100,
+            increments : 1,
+            moveTarget: true,
+            timeout : 8,
+            choices : 4
+        },
+        Insane : {
+            points : 25, // defaults
+            max : 500,
+            increments : 1,
+            moveTarget: true,
+            decreaseTime: true, // on success TBD, possibly down to 1s until they get 1 wrong
+            timeout : 5,
+            choices : 5
+        },
+        isAnswerCorrect: isAnswerCorrect,
+        randy: randy,
+        getTarget: getTarget,
+        generateChoices: generateChoices,
+        nextTarget: nextTarget
+    };
+    console.log('add controller',$scope);
+})
+.controller('SubCtrl' , function ( $scope , $state, $timeout, prefService) {
+    // gets a number between 1 and max
+    function randy( max ) {
+        return Math.ceil( Math.random() * max );
+    }
+    function getTarget ( game) {
+        return randy( game.max / game.increments ) * game.increments;
+    }
+    function generateChoices (serve,target,options) {
+        var choice,
+            crashTest = 0,
+            out = [],
+            correct = randy ( options ) ; // which one will be correct
+        for ( var i=1; i<=options ;i++) {
+            if ( i === correct ) {
+                out.push ( serve - target);
+            } else {
+                // spread could be effected by difficulty, ie maybe 1 difference?
+                choice = randy ( target );
+                // we want 5 unique choices
+                while ( ( isAnswerCorrect ( choice , serve, target ) ||
+                    choice === target ||
+                    !choice*1 ||
+                    out.indexOf (choice) > -1 ) &&
+                    crashTest++ < 1000 ) {
+                    choice = randy ( target );
+                }
+                out.push ( choice );
+            }
+        }
+        return out;
+    }
+    function isAnswerCorrect ( answer , serve, target ) {
+        return ( ( serve - answer ) === target );
+    }
+    function nextTarget ( current ) {
+        return current+1;
+    }
+    $scope.game = { name : 'Subtraction',
+        operator : '-',
         Easy : {
             points : 25, // defaults
             max : 20,
@@ -129,7 +210,7 @@ angular.module('numTen.controllers', [])
         if ( $scope.game[$scope.view.difficulty].moveTarget ) {
             $scope.point.target = $scope.game.nextTarget($scope.point.target);
         }
-        $scope.point.serve = $scope.game.randy ( $scope.point.target -1 );
+        $scope.point.serve = $scope.point.target + 5 + $scope.game.randy ( $scope.point.target -5 );
         $scope.point.choices = $scope.game.generateChoices ( $scope.point.serve , $scope.point.target , $scope.game[$scope.view.difficulty].choices ); // progress bar?
         $scope.point.served = false;
     };
