@@ -435,6 +435,7 @@ angular.module('numTen.controllers', [])
         if ( $scope.view.score ) {
             $scope.view.score.correct = 0;
             $scope.view.score.attempts = 0;
+            $scope.view.score.saved = false;
         }
         if ( $scope.point.$served ) {
             $timeout.cancel( $scope.point.$served );

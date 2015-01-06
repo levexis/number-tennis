@@ -90,7 +90,8 @@ angular.module('numTen.directives', [])
                             delete $scope.point.served; // this will trigger 1s servd
                         } else {
                             $scope.game.over = true;
-                            if ( prefService.getSetting('saveScores') ) {
+                            if ( !$scope.view.score.saved  && prefService.getSetting('saveScores') ) {
+                                $scope.view.score.saved = true;
                                 scoreService.saveScore( {
                                     when : new Date(),
                                     what: $scope.game.name,

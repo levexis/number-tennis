@@ -29,6 +29,7 @@ angular.module('numTen.services', [])
 })
 .factory('scoreService', function($rootScope , $log ) {
         // retrieve from local storage
+        // use angular.toJson as this removes internals like hashKeys which can then clash when parsed
         var _scores = JSON.parse ( window.localStorage.getItem('numTen.scores') ) || [];
         return {
             getScores: function ( ) {
@@ -36,11 +37,13 @@ angular.module('numTen.services', [])
                 return _scores;
             },
             saveScore: function ( data ) {
+                var jsonScores;
                 if (typeof data === 'object') {
                     _scores.push(data);
-                    // use angular.toJson as this removes internals like hashKeys which can then clash when parsed
-                    // again
-                    window.localStorage.setItem( 'numTen.scores', angular.toJson ( _scores ) );
+                    // need to remove $$hashkey as it wont get added properly and appear in the array
+                    jsonScores = angular.toJson ( _scores );
+                    window.localStorage.setItem( 'numTen.scores', jsonScores );
+                    _scores =JSON.parse ( jsonScores );
                 }
             }
         };
