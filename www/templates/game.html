@@ -1,4 +1,5 @@
 <ion-view title="{{game.name}}" hide-nav-bar="true">
+    <div  ng-controller="GameCtrl">
     <div class="bar bar-header bar-positive">
         <div>
             <i class="ion-ios7-arrow-back nt-navicon" ng-click="state.go('tab.play-index')"></i>
@@ -8,11 +9,12 @@
             <i class="ion-ios7-refresh-outline item-icon-right nt-navicon text-right" ng-click="restart();"></i>
         </div>
     </div>
-    <ion-content has-tabs="true" has-header="true" ng-controller="GameCtrl">
+    <ion-content has-tabs="true" has-header="true">
         <nt-countdown secs="3"></nt-countdown>
         <nt-serve></nt-serve>
         <!-- could use row and col ? -->
         <div class="nt-game-over" ng-show="game.over">Game Over</div>
         <nt-score></nt-score>
   </ion-content>
+  </div>
 </ion-view>

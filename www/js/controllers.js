@@ -192,7 +192,7 @@ angular.module('numTen.controllers', [])
         timeout : $scope.game[$scope.view.difficulty].timeout};
 
     $scope.restart = function () {
-        $scope.point.target = getTarget ( $scope.game[$scope.view.difficulty] );
+        $scope.point.target = $scope.game.getTarget ( $scope.game[$scope.view.difficulty] );
         $scope.view.countdown.set(1);
         delete $scope.point.won;
         delete $scope.point.serve;
