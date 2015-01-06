@@ -49,6 +49,24 @@ angular.module('numTen', ['ionic', 'numTen.services', 'numTen.controllers', 'num
               }
           }
       })
+      .state('tab.play-mul', {
+          url : '/play/multiply',
+          views : {
+              'play-tab' : {
+                  templateUrl : 'templates/game.html',
+                  controller : 'MulCtrl'
+              }
+          }
+      })
+      .state('tab.play-div', {
+          url : '/play/divide',
+          views : {
+              'play-tab' : {
+                  templateUrl : 'templates/game.html',
+                  controller : 'DivCtrl'
+              }
+          }
+      })
       .state('tab.settings', {
           url: '/settings',
           views: {
