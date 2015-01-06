@@ -15,8 +15,8 @@ angular.module('numTen.controllers', [])
 });
 */
 .controller('SettingsCtrl' , function ( $scope , $rootScope, prefService) {
-    // get pointer to  settings
-    $scope.settings = prefService.getSettings();
+        // get pointer to  settings
+        $scope.settings = prefService.getSettings();
 })
 .controller('ScoresCtrl' , function ( $scope , $rootScope, scoreService) {
     // get pointer to  settings
