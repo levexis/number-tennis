@@ -154,7 +154,7 @@ angular.module('numTen.directives', [])
     return {
             restrict : "E",// class responsive-sm seems to list entire row need to work out how to handle different screen orientations
             template : '<div class="row row-center animated" nt-choice-fader ng-class="{ \'fadeIn\' : point.serve && !point.served }"  ng-show="!game.over">\
-        <div ng-repeat="choice in point.choices" class="col text-center"><button class="button button-large button-light" ng-click="checkAnswer(choice);">{{choice}}</button></div>\
+        <div ng-repeat="choice in point.choices" class="col text-center"><button class="button button-light" ng-click="checkAnswer(choice);">{{choice}}</button></div>\
         </ng-repeat>\
     </div>'
     };
