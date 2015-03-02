@@ -1,0 +1,751 @@
+2015-03-01 16:32:02,066 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 16:32:02,067 [  DEBUG] Checking for update zip...
+2015-03-01 16:32:02,072 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 16:32:02,072 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 16:32:02,072 [  DEBUG] port: 38394
+2015-03-01 16:32:02,074 [  DEBUG] GET https://trigger.io/api/v1/version_check/3/3/86/
+2015-03-01 16:32:02,729 [  DEBUG] Checking API response for success or error
+2015-03-01 16:32:02,729 [   INFO] Update result: you already have the latest tools
+2015-03-01 16:32:02,730 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 16:32:02,849 [  DEBUG] Checking API response for success or error
+2015-03-01 16:32:02,849 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 16:32:02,849 [  DEBUG] GET https://trigger.io/api/v1/app/3006d9a0c03011e4922412313b0234c0/should_fetch_core_instructions
+2015-03-01 16:32:02,967 [  DEBUG] Checking API response for success or error
+2015-03-01 16:32:03,100 [  DEBUG] configuration is identical to last run
+2015-03-01 16:32:03,100 [  DEBUG] POST https://trigger.io/api/v1/reload/buildevent/create
+2015-03-01 16:32:03,274 [  DEBUG] Checking API response for success or error
+2015-03-01 16:32:03,275 [  ERROR] Target required for 'forge build', e.g. 'forge build android'
+2015-03-01 16:32:03,275 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 384, in development_build
+    raise ForgeError(FORGE_BUILD_NEEDS_TARGET)
+ForgeError: Target required for 'forge build', e.g. 'forge build android'
+
+2015-03-01 16:33:37,610 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 16:33:37,611 [  DEBUG] Checking for update zip...
+2015-03-01 16:33:37,615 [  ERROR] Can't run build for 'android', because you haven't built it!
+If you're interested in targetting android, please contact support@trigger.io to sign up for one of our paid plans.
+2015-03-01 16:33:37,615 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 449, in run
+    _assert_have_target_folder(build_type_dir, forge.settings['platform'])
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 52, in _assert_have_target_folder
+    "If you're interested in targetting {target}, please contact support@trigger.io to sign up for one of our paid plans.".format(target=target)
+ForgeError: Can't run build for 'android', because you haven't built it!
+If you're interested in targetting android, please contact support@trigger.io to sign up for one of our paid plans.
+
+2015-03-01 16:34:01,556 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 16:34:01,556 [  DEBUG] Checking for update zip...
+2015-03-01 16:34:01,694 [  DEBUG] Enabled platforms: ['android']
+2015-03-01 16:34:01,695 [  DEBUG] Using configuration file value u'' for android.sdk
+2015-03-01 16:34:01,704 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 16:34:01,704 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 16:34:01,704 [  DEBUG] port: 38394
+2015-03-01 16:34:01,705 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 16:34:02,307 [  DEBUG] Checking API response for success or error
+2015-03-01 16:34:02,308 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 16:34:02,308 [  DEBUG] POST https://trigger.io/api/v1/track/
+2015-03-01 16:34:02,308 [  DEBUG] <ForgeTask (android)> running...
+2015-03-01 16:34:02,308 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'run_android': ('/Users/paulcook/levexis/number-tennis/forge-tennis/development',
+                         u'',
+                         None,
+                         True,
+                         None)},
+  'when': {'platform_is': 'android'}}]
+2015-03-01 16:34:02,308 [  DEBUG] Using configuration file value u'' for android.sdk
+2015-03-01 16:34:23,330 [  ERROR] Couldn't find Android SDK, please set this in your local config for this app.
+
+To resolve this problem, you can modify the file "local_config.json" to something like:
+{
+    "android": {
+        "sdk": "/path/to/android-sdk"
+    }
+}
+
+Or pass commandline arguments to forge:
+forge --android.sdk "/path/to/android-sdk"
+
+2015-03-01 16:34:23,331 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 461, in run
+    build_to_run=build_to_run,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/customer_goals.py", line 136, in run_app
+    build_to_run.run()
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 334, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 293, in _call_with_params
+    return method(self, *params)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 636, in run_android
+    path_info = _find_or_install_sdk(build)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 295, in _find_or_install_sdk
+    examples={"android.sdk": path.abspath("/path/to/android-sdk")},
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/module_dynamic/lib.py", line 403, in local_config_problem
+    raise BASE_EXCEPTION(exc_message)
+ForgeError: Couldn't find Android SDK, please set this in your local config for this app.
+
+To resolve this problem, you can modify the file "local_config.json" to something like:
+{
+    "android": {
+        "sdk": "/path/to/android-sdk"
+    }
+}
+
+Or pass commandline arguments to forge:
+forge --android.sdk "/path/to/android-sdk"
+
+
+2015-03-01 17:26:15,235 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 17:26:15,235 [  DEBUG] Checking for update zip...
+2015-03-01 17:26:15,243 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 17:26:15,243 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 17:26:15,243 [  DEBUG] port: 38394
+2015-03-01 17:26:15,244 [  DEBUG] GET https://trigger.io/api/v1/version_check/3/3/86/
+2015-03-01 17:26:15,851 [  DEBUG] Checking API response for success or error
+2015-03-01 17:26:15,851 [   INFO] Update result: you already have the latest tools
+2015-03-01 17:26:15,851 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 17:26:15,977 [  DEBUG] Checking API response for success or error
+2015-03-01 17:26:15,977 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 17:26:15,977 [  DEBUG] GET https://trigger.io/api/v1/app/3006d9a0c03011e4922412313b0234c0/should_fetch_core_instructions
+2015-03-01 17:26:16,105 [  DEBUG] Checking API response for success or error
+2015-03-01 17:26:16,287 [  DEBUG] 'core' has changed in configuration
+2015-03-01 17:26:16,287 [   INFO] Your local config has been changed, downloading updated build instructions.
+2015-03-01 17:26:16,287 [   INFO] Fetching generation instructions for v2.2.7 into "/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/forge-templates-Gbi9Y8/.template"
+2015-03-01 17:26:16,287 [  DEBUG] GET https://trigger.io/api/v1/platform/v2.2.7/core_instructions
+2015-03-01 17:26:17,623 [  DEBUG] Unzipping instructions.zip to .
+2015-03-01 17:26:17,623 [   INFO] Removing old templates if present
+2015-03-01 17:26:17,623 [  DEBUG] Removing .template 
+2015-03-01 17:26:17,623 [   INFO] Using new templates
+2015-03-01 17:26:17,623 [  DEBUG] Moving /var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/forge-templates-Gbi9Y8/.template to .template
+2015-03-01 17:26:17,663 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 17:26:17,663 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 17:26:17,663 [  DEBUG] port: 38394
+2015-03-01 17:26:17,663 [  DEBUG] GET https://trigger.io/api/v1/version_check/3/3/86/
+2015-03-01 17:26:18,214 [  DEBUG] Checking API response for success or error
+2015-03-01 17:26:18,214 [   INFO] Update result: you already have the latest tools
+2015-03-01 17:26:18,214 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 17:26:18,341 [  DEBUG] Checking API response for success or error
+2015-03-01 17:26:18,341 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 17:26:18,341 [  DEBUG] GET https://trigger.io/api/v1/app/3006d9a0c03011e4922412313b0234c0/should_fetch_core_instructions
+2015-03-01 17:26:18,468 [  DEBUG] Checking API response for success or error
+2015-03-01 17:26:18,468 [  DEBUG] configuration is identical to last run
+2015-03-01 17:26:18,468 [  DEBUG] POST https://trigger.io/api/v1/reload/buildevent/create
+2015-03-01 17:26:18,651 [  DEBUG] Checking API response for success or error
+2015-03-01 17:26:18,651 [   INFO] Your app configuration has changed since your last build of this platform, performing a remote build of your app. Once this is downloaded future builds will be faster.
+2015-03-01 17:26:18,651 [   INFO] Starting new build
+2015-03-01 17:26:18,651 [   INFO] This could take a while, but will only happen again if you modify config.json
+2015-03-01 17:26:18,652 [  DEBUG] POST https://trigger.io/api/v1/app/3006d9a0c03011e4922412313b0234c0/build
+2015-03-01 17:26:18,779 [  DEBUG] Checking API response for success or error
+2015-03-01 17:26:18,780 [  ERROR] Forge API call to app/3006d9a0c03011e4922412313b0234c0/build went wrong: Unexpected property in config.json: 'icons'. Please consult 'Config File Reference' at http://docs.trigger.io for guidance.
+2015-03-01 17:26:18,780 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 372, in development_build
+    return development_build(unhandled_args, has_target)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 402, in development_build
+    build = remote.build(config=reload_config, target=target)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/remote.py", line 740, in build
+    build = self._request_development_build(config, target, id=build.get('id', None))
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/remote.py", line 718, in _request_development_build
+    return self._api_post(url, data=data)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/remote.py", line 475, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/remote.py", line 121, in _check_api_response_for_error
+    _raise_if_json_error(content_dict, error_template, resp, url)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/remote.py", line 81, in _raise_if_json_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to app/3006d9a0c03011e4922412313b0234c0/build went wrong: Unexpected property in config.json: 'icons'. Please consult 'Config File Reference' at http://docs.trigger.io for guidance.
+
+2015-03-01 18:00:52,488 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 18:00:52,488 [  DEBUG] Checking for update zip...
+2015-03-01 18:00:52,502 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 18:00:52,502 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 18:00:52,503 [  DEBUG] port: 38394
+2015-03-01 18:00:52,507 [  DEBUG] GET https://trigger.io/api/v1/version_check/3/3/86/
+2015-03-01 18:00:53,320 [  DEBUG] Checking API response for success or error
+2015-03-01 18:00:53,320 [   INFO] Update result: you already have the latest tools
+2015-03-01 18:00:53,320 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 18:00:53,443 [  DEBUG] Checking API response for success or error
+2015-03-01 18:00:53,443 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 18:00:53,443 [  DEBUG] GET https://trigger.io/api/v1/app/3006d9a0c03011e4922412313b0234c0/should_fetch_core_instructions
+2015-03-01 18:00:53,567 [  DEBUG] Checking API response for success or error
+2015-03-01 18:00:53,706 [  DEBUG] 'modules' has changed in configuration
+2015-03-01 18:00:53,706 [   INFO] Your local config has been changed, downloading updated build instructions.
+2015-03-01 18:00:53,706 [   INFO] Fetching generation instructions for v2.2.7 into "/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/forge-templates-3CUTEo/.template"
+2015-03-01 18:00:53,706 [  DEBUG] GET https://trigger.io/api/v1/platform/v2.2.7/core_instructions
+2015-03-01 18:00:54,940 [  DEBUG] Unzipping instructions.zip to .
+2015-03-01 18:00:54,940 [   INFO] Removing old templates if present
+2015-03-01 18:00:54,940 [  DEBUG] Removing .template 
+2015-03-01 18:00:54,944 [   INFO] Using new templates
+2015-03-01 18:00:54,944 [  DEBUG] Moving /var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/forge-templates-3CUTEo/.template to .template
+2015-03-01 18:00:55,025 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 18:00:55,026 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 18:00:55,026 [  DEBUG] port: 38394
+2015-03-01 18:00:55,026 [  DEBUG] GET https://trigger.io/api/v1/version_check/3/3/86/
+2015-03-01 18:00:55,525 [  DEBUG] Checking API response for success or error
+2015-03-01 18:00:55,525 [   INFO] Update result: you already have the latest tools
+2015-03-01 18:00:55,525 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 18:00:55,646 [  DEBUG] Checking API response for success or error
+2015-03-01 18:00:55,646 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 18:00:55,646 [  DEBUG] GET https://trigger.io/api/v1/app/3006d9a0c03011e4922412313b0234c0/should_fetch_core_instructions
+2015-03-01 18:00:55,761 [  DEBUG] Checking API response for success or error
+2015-03-01 18:00:55,761 [  DEBUG] configuration is identical to last run
+2015-03-01 18:00:55,761 [  DEBUG] POST https://trigger.io/api/v1/reload/buildevent/create
+2015-03-01 18:00:55,993 [  DEBUG] Checking API response for success or error
+2015-03-01 18:00:55,994 [  ERROR] Target required for 'forge build', e.g. 'forge build android'
+2015-03-01 18:00:55,994 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 372, in development_build
+    return development_build(unhandled_args, has_target)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 384, in development_build
+    raise ForgeError(FORGE_BUILD_NEEDS_TARGET)
+ForgeError: Target required for 'forge build', e.g. 'forge build android'
+
+2015-03-01 18:06:08,535 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 18:06:08,535 [  DEBUG] Checking for update zip...
+2015-03-01 18:06:08,677 [  DEBUG] Enabled platforms: ['ios']
+2015-03-01 18:06:08,687 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 18:06:08,687 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 18:06:08,687 [  DEBUG] port: 38394
+2015-03-01 18:06:08,687 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 18:06:09,283 [  DEBUG] Checking API response for success or error
+2015-03-01 18:06:09,283 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 18:06:09,283 [  DEBUG] POST https://trigger.io/api/v1/track/
+2015-03-01 18:06:09,283 [  DEBUG] <ForgeTask (ios)> running...
+2015-03-01 18:06:09,283 [  DEBUG] <ForgeTask (ios)> script:
+[{'do': {'package_ios': ()}, 'when': {'platform_is': 'ios'}}]
+2015-03-01 18:06:09,283 [  DEBUG] Using configuration file value u'client/dwlabs.mobileprovision' for ios.profile.provisioning_profile
+2015-03-01 18:06:09,283 [   INFO] Starting package process for iOS
+2015-03-01 18:06:09,284 [   INFO] Going to package: /Users/paulcook/levexis/number-tennis/forge-tennis/development/ios/device-ios.app
+2015-03-01 18:06:09,284 [  ERROR] Couldn't find the specified provisioning profile at client/dwlabs.mobileprovision
+
+To resolve this problem, you can modify the file "local_config.json" to something like:
+{
+    "ios": {
+        "profiles": {
+            "DEFAULT": {
+                "provisioning_profile": "/path/to/embedded.profile"
+            }
+        }
+    }
+}
+
+Or pass commandline arguments to forge:
+forge --ios.profile.provisioning_profile "/path/to/embedded.profile"
+
+More information is available at:
+[https://trigger.io/docs/current/tools/local_config.html]
+
+2015-03-01 18:06:09,284 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 476, in package
+    build_to_run=build_to_run,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/customer_goals.py", line 151, in package_app
+    build_to_run.run()
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 334, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 293, in _call_with_params
+    return method(self, *params)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/ios_tasks.py", line 725, in package_ios
+    output_path_for_manifest=output_path_for_manifest,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/ios_tasks.py", line 405, in create_ipa_from_app
+    plist_str = self._grab_plist_from_binary_mess(build, provisioning_profile)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/ios_tasks.py", line 55, in _grab_plist_from_binary_mess
+    self._missing_provisioning_profile(build, file_path)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/ios_tasks.py", line 47, in _missing_provisioning_profile
+    more_info="https://trigger.io/docs/current/tools/local_config.html"
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/module_dynamic/lib.py", line 403, in local_config_problem
+    raise BASE_EXCEPTION(exc_message)
+ForgeError: Couldn't find the specified provisioning profile at client/dwlabs.mobileprovision
+
+To resolve this problem, you can modify the file "local_config.json" to something like:
+{
+    "ios": {
+        "profiles": {
+            "DEFAULT": {
+                "provisioning_profile": "/path/to/embedded.profile"
+            }
+        }
+    }
+}
+
+Or pass commandline arguments to forge:
+forge --ios.profile.provisioning_profile "/path/to/embedded.profile"
+
+More information is available at:
+[https://trigger.io/docs/current/tools/local_config.html]
+
+
+2015-03-01 18:07:05,851 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 18:07:05,852 [  DEBUG] Checking for update zip...
+2015-03-01 18:07:06,044 [  DEBUG] Enabled platforms: ['ios']
+2015-03-01 18:07:06,044 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 18:07:06,044 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 18:07:06,044 [  DEBUG] port: 38394
+2015-03-01 18:07:06,044 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 18:07:06,755 [  DEBUG] Checking API response for success or error
+2015-03-01 18:07:06,755 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 18:07:06,755 [  DEBUG] POST https://trigger.io/api/v1/track/
+2015-03-01 18:07:06,755 [  DEBUG] <ForgeTask (ios)> running...
+2015-03-01 18:07:06,755 [  DEBUG] <ForgeTask (ios)> script:
+[{'do': {'package_ios': ()}, 'when': {'platform_is': 'ios'}}]
+2015-03-01 18:07:06,756 [  DEBUG] Using configuration file value u'dwlabs.mobileprovision' for ios.profile.provisioning_profile
+2015-03-01 18:07:06,756 [   INFO] Starting package process for iOS
+2015-03-01 18:07:06,756 [   INFO] Going to package: /Users/paulcook/levexis/number-tennis/forge-tennis/development/ios/device-ios.app
+2015-03-01 18:07:06,756 [  DEBUG] Provisioning profile has valid wildcard application ID
+2015-03-01 18:07:06,756 [   INFO] Plist OK
+2015-03-01 18:07:06,756 [   INFO] 7 Provisioned Device(s):
+2015-03-01 18:07:06,756 [   INFO] ['1be2e99fc1df2c44a2875f4147fcd3593a67dd32', 'd8ddc82ae629d83be9ae0d7390b7059840851197', '5a39d5d5127965ea2534471d6f49a3f0ca822114', 'f23037df755183c191c459f4ed1f9ff0c0bcee4f', '747f2fa98a4be0812fa7c78bf6b84d3e4bf1a8fb', 'f4e227c6b75ad76e0999d50a4139bee82e749e6a', '9c1202c8efbd77bc97340d78f16a0c794180338c']
+2015-03-01 18:07:06,756 [  DEBUG] Extracted seed ID: FCF5XTJKP5
+2015-03-01 18:07:06,756 [  DEBUG] Making Payload directory
+2015-03-01 18:07:06,758 [  DEBUG] Running: '/usr/bin/codesign' '--force' '--identifier' 'io.trigger.forge3006d9a0c03011e4922412313b0234c0' '--entitlements' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpcfUoGI' '--sign' 'iPhone Developer' '/Users/paulcook/levexis/number-tennis/forge-tennis/development/ios/device-ios.app'
+2015-03-01 18:07:06,794 [  DEBUG] iPhone Developer: ambiguous (matches "iPhone Developer: Paul Cook (5N6S9NG4CZ)" and "iPhone Developer: Antonios Papantoniou (DXPBTFY8QL)" in /Users/paulcook/Library/Keychains/login.keychain)
+2015-03-01 18:07:06,795 [  ERROR] Failed when running /usr/bin/codesign: iPhone Developer: ambiguous (matches "iPhone Developer: Paul Cook (5N6S9NG4CZ)" and "iPhone Developer: Antonios Papantoniou (DXPBTFY8QL)" in /Users/paulcook/Library/Keychains/login.keychain)
+
+2015-03-01 18:07:06,795 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 476, in package
+    build_to_run=build_to_run,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/customer_goals.py", line 151, in package_app
+    build_to_run.run()
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 334, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 293, in _call_with_params
+    return method(self, *params)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/ios_tasks.py", line 725, in package_ios
+    output_path_for_manifest=output_path_for_manifest,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/ios_tasks.py", line 440, in create_ipa_from_app
+    ident=_generate_package_name(build)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/ios_tasks.py", line 356, in _sign_app
+    path_to_app)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/module_dynamic/utils.py", line 347, in run_shell
+    output=state.output.getvalue()
+ShellError: Failed when running /usr/bin/codesign: iPhone Developer: ambiguous (matches "iPhone Developer: Paul Cook (5N6S9NG4CZ)" and "iPhone Developer: Antonios Papantoniou (DXPBTFY8QL)" in /Users/paulcook/Library/Keychains/login.keychain)
+
+
+2015-03-01 20:49:09,786 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 20:49:09,786 [  DEBUG] Checking for update zip...
+2015-03-01 20:49:09,981 [  DEBUG] Enabled platforms: ['android']
+2015-03-01 20:49:09,981 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 20:49:09,981 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 20:49:09,981 [  DEBUG] port: 38394
+2015-03-01 20:49:09,981 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 20:49:10,574 [  DEBUG] Checking API response for success or error
+2015-03-01 20:49:10,574 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 20:49:10,574 [  DEBUG] POST https://trigger.io/api/v1/track/
+2015-03-01 20:49:10,574 [  DEBUG] <ForgeTask (android)> running...
+2015-03-01 20:49:10,574 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'package_android': ()}, 'when': {'platform_is': 'android'}}]
+2015-03-01 20:49:10,574 [  DEBUG] Checking to see if java is already in the PATH
+2015-03-01 20:49:10,574 [  DEBUG] Running: 'java' '-version'
+2015-03-01 20:49:10,798 [  DEBUG] Can run java directly from PATH
+2015-03-01 20:49:10,798 [  DEBUG] Using configuration file value u'/Users/paulcook/adt/sdk/' for android.sdk
+2015-03-01 20:49:10,798 [  DEBUG] Using configuration file value u'' for android.profile.keystore
+2015-03-01 20:49:10,798 [  DEBUG] Using configuration file value u'' for android.profile.keyalias
+2015-03-01 20:52:24,520 [   INFO] Updating local config with {
+    "android.profiles.DEFAULT.keypass": "poo", 
+    "android.profiles.DEFAULT.storepass": "poo", 
+    "android.profiles.DEFAULT.keystore": "~/.android", 
+    "android.profiles.DEFAULT.keyalias": "poo"
+}
+2015-03-01 20:52:24,520 [   INFO] Creating Android .apk file
+2015-03-01 20:52:24,521 [   INFO] Creating APK with aapt
+2015-03-01 20:52:24,521 [   INFO] Downloading lib file: android-platform.apk, this will only happen when a new file is available.
+2015-03-01 20:52:24,521 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 20:52:24,521 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 20:52:24,521 [  DEBUG] port: 38394
+2015-03-01 20:52:24,521 [  DEBUG] GET https://trigger.io/lib-static/v2.2.7/android-platform.apk
+2015-03-01 20:52:34,427 [  DEBUG] Running: '/Users/paulcook/adt/sdk/build-tools/android-4.4/aapt' 'p' '-F' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpi12zB7' '-S' 'development/android/res' '-M' 'development/android/AndroidManifest.xml' '-I' '/Users/paulcook/levexis/number-tennis/forge-tennis/.lib/android-platform.apk' '-A' 'development/android/assets' '-0' '' '--rename-manifest-package' 'io.trigger.forge3006d9a0c03011e4922412313b0234c0' '-f' 'development/android/bin'
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,427 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,432 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,432 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,433 [  DEBUG]     (skipping file '.npmignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,433 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,433 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.eslintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:34,499 [  DEBUG]     (skipping file '.do_not_use' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:52:35,301 [   INFO] Signing APK with your release key
+2015-03-01 20:52:35,302 [  DEBUG] Running: 'java' '-jar' '.template/lib/apk-signer.jar' '--keystore' '/Users/paulcook/levexis/number-tennis/forge-tennis/~/.android' '--storepass' 'poo' '--keyalias' 'poo' '--keypass' 'poo' '--out' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmp6oIvav' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmp66p4UQ'
+2015-03-01 20:52:35,473 [  DEBUG] Keystore file not found.
+2015-03-01 20:52:35,474 [  ERROR] Failed when running java: Keystore file not found.
+
+2015-03-01 20:52:35,474 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 476, in package
+    build_to_run=build_to_run,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/customer_goals.py", line 151, in package_app
+    build_to_run.run()
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 334, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 293, in _call_with_params
+    return method(self, *params)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 790, in package_android
+    _sign_zipf_release(lib_path, jre, compressed_zipf_name, signed_zipf_name, signing_info)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 481, in _sign_zipf_release
+    zipf_name=zipf_name,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 455, in _sign_zipf
+    run_shell(*args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/module_dynamic/utils.py", line 347, in run_shell
+    output=state.output.getvalue()
+ShellError: Failed when running java: Keystore file not found.
+
+
+2015-03-01 20:58:25,612 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 20:58:25,612 [  DEBUG] Checking for update zip...
+2015-03-01 20:58:25,860 [  ERROR] Something went wrong that we didn't expect:
+2015-03-01 20:58:25,860 [  ERROR] Expecting property name enclosed in double quotes: line 6 column 13 (char 136)
+2015-03-01 20:58:25,860 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 471, in package
+    extra_args=unhandled_args,
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/build.py", line 99, in create_build
+    local_config = build_config.load_local()
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/build_config.py", line 80, in load_local
+    local_config_dict = json.loads(local_configs)
+  File "/Users/antoine/Projects/webmynd/banjo-hat.hg.installers/dist/build/pyi.darwin/forge/outPYZ1.pyz/json", line 338, in loads
+  File "/Users/antoine/Projects/webmynd/banjo-hat.hg.installers/dist/build/pyi.darwin/forge/outPYZ1.pyz/json.decoder", line 365, in decode
+  File "/Users/antoine/Projects/webmynd/banjo-hat.hg.installers/dist/build/pyi.darwin/forge/outPYZ1.pyz/json.decoder", line 381, in raw_decode
+ValueError: Expecting property name enclosed in double quotes: line 6 column 13 (char 136)
+
+2015-03-01 20:58:25,860 [  ERROR] See /Users/paulcook/levexis/number-tennis/forge-tennis/forge-error.log for more details
+2015-03-01 20:58:25,860 [  ERROR] Please contact support@trigger.io
+2015-03-01 20:58:36,883 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 20:58:36,884 [  DEBUG] Checking for update zip...
+2015-03-01 20:58:37,078 [  DEBUG] Enabled platforms: ['android']
+2015-03-01 20:58:37,079 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 20:58:37,079 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 20:58:37,079 [  DEBUG] port: 38394
+2015-03-01 20:58:37,079 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 20:58:37,673 [  DEBUG] Checking API response for success or error
+2015-03-01 20:58:37,673 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 20:58:37,673 [  DEBUG] POST https://trigger.io/api/v1/track/
+2015-03-01 20:58:37,673 [  DEBUG] <ForgeTask (android)> running...
+2015-03-01 20:58:37,673 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'package_android': ()}, 'when': {'platform_is': 'android'}}]
+2015-03-01 20:58:37,673 [  DEBUG] Checking to see if java is already in the PATH
+2015-03-01 20:58:37,673 [  DEBUG] Running: 'java' '-version'
+2015-03-01 20:58:37,743 [  DEBUG] Can run java directly from PATH
+2015-03-01 20:58:37,744 [  DEBUG] Using configuration file value u'/Users/paulcook/adt/sdk/' for android.sdk
+2015-03-01 20:58:37,744 [  DEBUG] Using configuration file value u'~/.android/debug.keystore' for android.profile.keystore
+2015-03-01 20:58:52,726 [   INFO] Updating local config with {
+    "android.profiles.DEFAULT.storepass": "", 
+    "android.profiles.DEFAULT.keyalias": "debug"
+}
+2015-03-01 20:58:52,726 [   INFO] Creating Android .apk file
+2015-03-01 20:58:52,735 [   INFO] Creating APK with aapt
+2015-03-01 20:58:52,807 [  DEBUG] File: android-platform.apk, already downloaded and correct.
+2015-03-01 20:58:52,807 [  DEBUG] Running: '/Users/paulcook/adt/sdk/build-tools/android-4.4/aapt' 'p' '-F' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpPJEVxp' '-S' 'development/android/res' '-M' 'development/android/AndroidManifest.xml' '-I' '/Users/paulcook/levexis/number-tennis/forge-tennis/.lib/android-platform.apk' '-A' 'development/android/assets' '-0' '' '--rename-manifest-package' 'io.trigger.forge3006d9a0c03011e4922412313b0234c0' '-f' 'development/android/bin'
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,807 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,808 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,808 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,808 [  DEBUG]     (skipping file '.npmignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,810 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,811 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.eslintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:52,848 [  DEBUG]     (skipping file '.do_not_use' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 20:58:54,182 [   INFO] Signing APK with your release key
+2015-03-01 20:58:54,182 [  DEBUG] Running: 'java' '-jar' '.template/lib/apk-signer.jar' '--keystore' '/Users/paulcook/levexis/number-tennis/forge-tennis/~/.android/debug.keystore' '--storepass' '' '--keyalias' 'debug' '--keypass' '' '--out' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpQynsva' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmprCyM2v'
+2015-03-01 20:58:54,309 [  DEBUG] Keystore file not found.
+2015-03-01 20:58:54,309 [  ERROR] Failed when running java: Keystore file not found.
+
+2015-03-01 20:58:54,309 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 476, in package
+    build_to_run=build_to_run,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/customer_goals.py", line 151, in package_app
+    build_to_run.run()
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 334, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 293, in _call_with_params
+    return method(self, *params)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 790, in package_android
+    _sign_zipf_release(lib_path, jre, compressed_zipf_name, signed_zipf_name, signing_info)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 481, in _sign_zipf_release
+    zipf_name=zipf_name,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 455, in _sign_zipf
+    run_shell(*args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/module_dynamic/utils.py", line 347, in run_shell
+    output=state.output.getvalue()
+ShellError: Failed when running java: Keystore file not found.
+
+
+2015-03-01 21:02:21,643 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 21:02:21,643 [  DEBUG] Checking for update zip...
+2015-03-01 21:02:21,832 [  DEBUG] Enabled platforms: ['android']
+2015-03-01 21:02:21,832 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 21:02:21,832 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 21:02:21,832 [  DEBUG] port: 38394
+2015-03-01 21:02:21,832 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 21:02:22,380 [  DEBUG] Checking API response for success or error
+2015-03-01 21:02:22,380 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 21:02:22,381 [  DEBUG] POST https://trigger.io/api/v1/track/
+2015-03-01 21:02:22,381 [  DEBUG] <ForgeTask (android)> running...
+2015-03-01 21:02:22,381 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'package_android': ()}, 'when': {'platform_is': 'android'}}]
+2015-03-01 21:02:22,381 [  DEBUG] Checking to see if java is already in the PATH
+2015-03-01 21:02:22,381 [  DEBUG] Running: 'java' '-version'
+2015-03-01 21:02:22,450 [  DEBUG] Can run java directly from PATH
+2015-03-01 21:02:22,450 [  DEBUG] Using configuration file value u'/Users/paulcook/adt/sdk/' for android.sdk
+2015-03-01 21:02:22,450 [  DEBUG] Using configuration file value u'/Users/paulcook/.android/debug.keystore' for android.profile.keystore
+2015-03-01 21:02:22,450 [  DEBUG] Using configuration file value u'debug' for android.profile.keyalias
+2015-03-01 21:02:22,450 [  DEBUG] Using configuration file value u'' for android.profile.storepass
+2015-03-01 21:02:31,376 [   INFO] Creating Android .apk file
+2015-03-01 21:02:31,380 [   INFO] Creating APK with aapt
+2015-03-01 21:02:31,449 [  DEBUG] File: android-platform.apk, already downloaded and correct.
+2015-03-01 21:02:31,449 [  DEBUG] Running: '/Users/paulcook/adt/sdk/build-tools/android-4.4/aapt' 'p' '-F' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpM_91Qu' '-S' 'development/android/res' '-M' 'development/android/AndroidManifest.xml' '-I' '/Users/paulcook/levexis/number-tennis/forge-tennis/.lib/android-platform.apk' '-A' 'development/android/assets' '-0' '' '--rename-manifest-package' 'io.trigger.forge3006d9a0c03011e4922412313b0234c0' '-f' 'development/android/bin'
+2015-03-01 21:02:31,465 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,465 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,465 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,465 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,465 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,466 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,466 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,466 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,467 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,467 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,467 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,468 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,468 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,470 [  DEBUG]     (skipping file '.npmignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,470 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,473 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,542 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,542 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,542 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,542 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,542 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,542 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,542 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,542 [  DEBUG]     (skipping file '.eslintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,543 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:31,543 [  DEBUG]     (skipping file '.do_not_use' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:02:32,391 [   INFO] Signing APK with your release key
+2015-03-01 21:02:32,391 [  DEBUG] Running: 'java' '-jar' '.template/lib/apk-signer.jar' '--keystore' '/Users/paulcook/.android/debug.keystore' '--storepass' '' '--keyalias' 'debug' '--keypass' '' '--out' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpV35myE' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpNyCigY'
+2015-03-01 21:02:32,565 [  DEBUG] Failed to load keystore data, is the store password correct?
+2015-03-01 21:02:32,565 [  ERROR] Failed when running java: Failed to load keystore data, is the store password correct?
+
+2015-03-01 21:02:32,566 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 476, in package
+    build_to_run=build_to_run,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/customer_goals.py", line 151, in package_app
+    build_to_run.run()
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 334, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 293, in _call_with_params
+    return method(self, *params)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 790, in package_android
+    _sign_zipf_release(lib_path, jre, compressed_zipf_name, signed_zipf_name, signing_info)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 481, in _sign_zipf_release
+    zipf_name=zipf_name,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 455, in _sign_zipf
+    run_shell(*args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/module_dynamic/utils.py", line 347, in run_shell
+    output=state.output.getvalue()
+ShellError: Failed when running java: Failed to load keystore data, is the store password correct?
+
+
+2015-03-01 21:03:48,502 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 21:03:48,502 [  DEBUG] Checking for update zip...
+2015-03-01 21:03:48,685 [  DEBUG] Enabled platforms: ['android']
+2015-03-01 21:03:48,685 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 21:03:48,685 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 21:03:48,685 [  DEBUG] port: 38394
+2015-03-01 21:03:48,685 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 21:03:49,320 [  DEBUG] Checking API response for success or error
+2015-03-01 21:03:49,320 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 21:03:49,320 [  DEBUG] POST https://trigger.io/api/v1/track/
+2015-03-01 21:03:49,320 [  DEBUG] <ForgeTask (android)> running...
+2015-03-01 21:03:49,320 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'package_android': ()}, 'when': {'platform_is': 'android'}}]
+2015-03-01 21:03:49,320 [  DEBUG] Checking to see if java is already in the PATH
+2015-03-01 21:03:49,320 [  DEBUG] Running: 'java' '-version'
+2015-03-01 21:03:49,389 [  DEBUG] Can run java directly from PATH
+2015-03-01 21:03:49,389 [  DEBUG] Using configuration file value u'/Users/paulcook/adt/sdk/' for android.sdk
+2015-03-01 21:03:49,389 [  DEBUG] Using configuration file value u'/Users/paulcook/.android/release.keystore' for android.profile.keystore
+2015-03-01 21:03:49,389 [  DEBUG] Using configuration file value u'medit8' for android.profile.keyalias
+2015-03-01 21:03:49,389 [  DEBUG] Using configuration file value u'medit8' for android.profile.storepass
+2015-03-01 21:03:56,015 [   INFO] Updating local config with {
+    "android.profiles.DEFAULT.keypass": "medit8"
+}
+2015-03-01 21:03:56,016 [   INFO] Creating Android .apk file
+2015-03-01 21:03:56,024 [   INFO] Creating APK with aapt
+2015-03-01 21:03:56,092 [  DEBUG] File: android-platform.apk, already downloaded and correct.
+2015-03-01 21:03:56,092 [  DEBUG] Running: '/Users/paulcook/adt/sdk/build-tools/android-4.4/aapt' 'p' '-F' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmp_8dtsI' '-S' 'development/android/res' '-M' 'development/android/AndroidManifest.xml' '-I' '/Users/paulcook/levexis/number-tennis/forge-tennis/.lib/android-platform.apk' '-A' 'development/android/assets' '-0' '' '--rename-manifest-package' 'io.trigger.forge3006d9a0c03011e4922412313b0234c0' '-f' 'development/android/bin'
+2015-03-01 21:03:56,100 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,100 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,100 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,100 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,100 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,100 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,100 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,100 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,101 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,101 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,101 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,101 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,101 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,101 [  DEBUG]     (skipping file '.npmignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,101 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,101 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.eslintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,119 [  DEBUG]     (skipping file '.do_not_use' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:03:56,777 [   INFO] Signing APK with your release key
+2015-03-01 21:03:56,777 [  DEBUG] Running: 'java' '-jar' '.template/lib/apk-signer.jar' '--keystore' '/Users/paulcook/.android/release.keystore' '--storepass' 'medit8' '--keyalias' 'medit8' '--keypass' 'medit8' '--out' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpAib9D8' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpigY3UU'
+2015-03-01 21:03:56,895 [  DEBUG] Keystore file not found.
+2015-03-01 21:03:56,895 [  ERROR] Failed when running java: Keystore file not found.
+
+2015-03-01 21:03:56,895 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 476, in package
+    build_to_run=build_to_run,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/customer_goals.py", line 151, in package_app
+    build_to_run.run()
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 334, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 293, in _call_with_params
+    return method(self, *params)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 790, in package_android
+    _sign_zipf_release(lib_path, jre, compressed_zipf_name, signed_zipf_name, signing_info)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 481, in _sign_zipf_release
+    zipf_name=zipf_name,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 455, in _sign_zipf
+    run_shell(*args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/module_dynamic/utils.py", line 347, in run_shell
+    output=state.output.getvalue()
+ShellError: Failed when running java: Keystore file not found.
+
+
+2015-03-01 21:04:18,000 [   INFO] Forge tools running at version 3.3.86
+2015-03-01 21:04:18,000 [  DEBUG] Checking for update zip...
+2015-03-01 21:04:18,194 [  DEBUG] Enabled platforms: ['android']
+2015-03-01 21:04:18,194 [  DEBUG] Forge build tools version: 3.3.86
+2015-03-01 21:04:18,194 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2015-03-01 21:04:18,194 [  DEBUG] port: 38394
+2015-03-01 21:04:18,194 [  DEBUG] GET https://trigger.io/api/v1/auth/loggedin
+2015-03-01 21:04:18,732 [  DEBUG] Checking API response for success or error
+2015-03-01 21:04:18,733 [  DEBUG] already authenticated via cookie - continuing
+2015-03-01 21:04:18,733 [  DEBUG] POST https://trigger.io/api/v1/track/
+2015-03-01 21:04:18,733 [  DEBUG] <ForgeTask (android)> running...
+2015-03-01 21:04:18,733 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'package_android': ()}, 'when': {'platform_is': 'android'}}]
+2015-03-01 21:04:18,733 [  DEBUG] Checking to see if java is already in the PATH
+2015-03-01 21:04:18,733 [  DEBUG] Running: 'java' '-version'
+2015-03-01 21:04:18,770 [  DEBUG] Can run java directly from PATH
+2015-03-01 21:04:18,770 [  DEBUG] Using configuration file value u'/Users/paulcook/adt/sdk/' for android.sdk
+2015-03-01 21:04:18,770 [  DEBUG] Using configuration file value u'release.keystore' for android.profile.keystore
+2015-03-01 21:04:18,770 [  DEBUG] Using configuration file value u'medit8' for android.profile.keypass
+2015-03-01 21:04:18,770 [  DEBUG] Using configuration file value u'medit8' for android.profile.keyalias
+2015-03-01 21:04:18,770 [  DEBUG] Using configuration file value u'medit8' for android.profile.storepass
+2015-03-01 21:04:18,770 [   INFO] Creating Android .apk file
+2015-03-01 21:04:18,770 [   INFO] Creating APK with aapt
+2015-03-01 21:04:18,840 [  DEBUG] File: android-platform.apk, already downloaded and correct.
+2015-03-01 21:04:18,840 [  DEBUG] Running: '/Users/paulcook/adt/sdk/build-tools/android-4.4/aapt' 'p' '-F' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmp3cOhVc' '-S' 'development/android/res' '-M' 'development/android/AndroidManifest.xml' '-I' '/Users/paulcook/levexis/number-tennis/forge-tennis/.lib/android-platform.apk' '-A' 'development/android/assets' '-0' '' '--rename-manifest-package' 'io.trigger.forge3006d9a0c03011e4922412313b0234c0' '-f' 'development/android/bin'
+2015-03-01 21:04:18,840 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,840 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,840 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.npmignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,841 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.eslintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:18,860 [  DEBUG]     (skipping file '.do_not_use' due to ANDROID_AAPT_IGNORE pattern '.*')
+2015-03-01 21:04:19,521 [   INFO] Signing APK with your release key
+2015-03-01 21:04:19,521 [  DEBUG] Running: 'java' '-jar' '.template/lib/apk-signer.jar' '--keystore' '/Users/paulcook/levexis/number-tennis/forge-tennis/release.keystore' '--storepass' 'medit8' '--keyalias' 'medit8' '--keypass' 'medit8' '--out' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpuH1l3k' '/var/folders/y2/gzhqfb1x5ql3nknsjrd5949m0000gn/T/tmpXbnuAh'
+2015-03-01 21:04:19,643 [  DEBUG] Failed to load key, does the key exist?
+2015-03-01 21:04:19,643 [  ERROR] Failed when running java: Failed to load key, does the key exist?
+
+2015-03-01 21:04:19,643 [  DEBUG] Traceback (most recent call last):
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/async.py", line 106, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/paulcook/Library/Trigger Toolkit/build-tools/forge/main.py", line 476, in package
+    build_to_run=build_to_run,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/customer_goals.py", line 151, in package_app
+    build_to_run.run()
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 334, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/build.py", line 293, in _call_with_params
+    return method(self, *params)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 790, in package_android
+    _sign_zipf_release(lib_path, jre, compressed_zipf_name, signed_zipf_name, signing_info)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 481, in _sign_zipf_release
+    zipf_name=zipf_name,
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/android_tasks.py", line 455, in _sign_zipf
+    run_shell(*args)
+  File "/Users/paulcook/levexis/number-tennis/forge-tennis/.template/generate_dynamic/module_dynamic/utils.py", line 347, in run_shell
+    output=state.output.getvalue()
+ShellError: Failed when running java: Failed to load key, does the key exist?
+
+

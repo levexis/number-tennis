@@ -6,4 +6,6 @@ www/scripts/vendor
 test/artifacts
 client/scripts/vendor
 phonegap/
-forge-tennis/
+forge-tennis/development
+forge-tennis/src
+

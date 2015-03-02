@@ -1,0 +1,21 @@
+{
+    "android": {
+        "profiles": {
+            "DEFAULT": {
+                "keystore": "release.keystore", 
+                "keypass": "medit8", 
+                "keyalias": "medit8", 
+                "storepass": "medit8"
+            }
+        }, 
+        "sdk": "/Users/paulcook/adt/sdk/"
+    }, 
+    "ios": {
+        "profiles": {
+            "DEFAULT": {
+                "provisioning_profile": "dwlabs.mobileprovision"
+            }
+        }
+    }, 
+    "general": {}
+}
