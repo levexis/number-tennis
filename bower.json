@@ -1,0 +1,26 @@
+{
+  "name": "number-tennis",
+  "version": "0.0.2",
+  "private": true,
+  "description": "Simple arithmetic games",
+  "homepage": "https://github.com/levexis/canappr",
+  "authors": [
+    "Paul Cook <levexis@gmail.com>",
+    "Thomas Cook <thomasjmcook@gmail.com>"
+  ],
+  "dependencies": {
+    "underscore": "latest",
+    "modernizr": "latest",
+    "json3": "latest",
+    "animate.css": "3.1.1",
+    "prefixfree": "latest",
+    "font-awesome": "~4.2",
+    "ionic": "latest" ,
+    "ionicons": "latest"
+  },
+  "devDependencies": {
+    "angular": "1.2.12",
+    "angular-mocks": "1.2.12",
+    "angular-scenario": "1.2.12"
+  }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.daddyswork.numbertennis"
+        version   = "0.1">
+    <name>Number Tennis</name>
+
+    <description>
+        Maths game played @ Hawthorns School
+    </description>
+
+	<author href="http://linedin.com/in/adtechzen" email="levexis@googlemail.com">
+        Thomas Cook et Al
+    </author>
+<preference name="phonegap-version" value="4.2.0" />
+
+    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
+        <false/>
+    </gap:config-file>
+    <preference name="UIViewControllerBasedStatusBarAppearance" value="false" />
+
+    <gap:platform name="android" />
+    <gap:platform name="ios" />
+
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+
+</widget>

@@ -1,0 +1,41 @@
+{
+	"config_version": "4",
+	"name": "Number Tennis",
+	"author": "trigger@daddyswork.com",
+	"version": "0.1",
+	"platform_version": "v2.2.7",
+	"description": "Maths game by Thomas JM Cook",
+	"core": {
+		"general": {
+			"logging": {
+				"level": "DEBUG"
+			},
+			"reload": true
+		}
+	},
+	"modules": {
+		"icons": {
+			"version": "2.4",
+			"config": {
+				"ios": {
+					"57": "icon/thomas/ios/Icon.png",
+					"72": "icon/thomas/sizes/thomas-72.png",
+					"76": "icon/ios/AppIcon.appiconset/Icon-76.png",
+					"114": "icon/thomas/ios/apple-touch-icon-114x114-precomposed.png",
+					"120": "icon/ios/AppIcon.appiconset/Icon-60@2x.png",
+					"144": "icon/thomas/ios/apple-touch-icon-144x144-precomposed.png",
+					"152": "icon/ios/AppIcon.appiconset/Icon-76@2x.png",
+					"180": "icon/ios/AppIcon.appiconset/Icon-60@3x.png",
+					"prerendered": true
+				},
+				"android": {
+					"36": "icon/thomas/sizes/thomas-36.png",
+					"48": "icon/thomas/sizes/thomas-48.png",
+					"72": "icon/thomas/sizes/thomas-72.png",
+					"96": "icon/thomas/sizes/thomas-96.png",
+					"144": "icon/thomas/sizes/thomas-144.png"
+				}
+			}
+		}
+	}
+}

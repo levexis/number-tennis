@@ -1,0 +1,9 @@
+.idea/
+node_modules/
+coverage/
+bower_components/
+www/scripts/vendor
+test/artifacts
+client/scripts/vendor
+phonegap/
+forge-tennis/
